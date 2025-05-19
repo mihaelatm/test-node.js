@@ -4,12 +4,13 @@ import { appealStatus } from "../constants/appealStatus.js";
 const appealSchema = new mongoose.Schema(
   {
     subject: { type: String, required: true },
+    message: { type: String, required: true },
     status: {
       type: String,
       enum: Object.values(appealStatus),
       default: appealStatus.NEW,
     },
-    solution: { type: String, required: true },
+    solution: { type: String },
     cancelReason: { type: String },
   },
   { timestamps: true }
