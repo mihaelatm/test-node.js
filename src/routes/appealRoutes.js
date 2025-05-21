@@ -11,10 +11,10 @@ import {
 const router = express.Router();
 
 router.post("/", createAppeal);
+router.put("/cancel-all/in-progress", cancelAllInProgress);
 router.put("/:id/in-progress", takeInProgress);
 router.put("/:id/complete", completeAppeal);
 router.put("/:id/cancel", cancelAppeal);
 router.get("/", getAppeals);
-router.put("/cancel-all/in-progress", cancelAllInProgress);
 
 export default router;

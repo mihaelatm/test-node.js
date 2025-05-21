@@ -128,11 +128,14 @@ export const cancelAllInProgress = async (req, res) => {
         cancelReason: "Отменено администратором",
       }
     );
+    console.log("Result updateMany:", result);
     res.json({
       message: "Все обращения в работе отменены.",
       updatedCount: result.modifiedCount,
     });
   } catch (error) {
+    console.error("Ошибка в cancelAllInProgress:", error);
     res.status(500).json({ message: "Ошибка при отмене обращений." });
+    console.error("Error:", error);
   }
 };
