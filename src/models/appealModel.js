@@ -4,7 +4,10 @@ import { appealStatus } from "../constants/appealStatus.js";
 const appealSchema = new mongoose.Schema(
   {
     subject: { type: String, required: true },
-    message: { type: String, required: true },
+    message: {
+      type: String,
+      required: true,
+    },
     status: {
       type: String,
       enum: Object.values(appealStatus),
